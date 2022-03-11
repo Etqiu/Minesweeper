@@ -41,8 +41,14 @@ public void setMines()
 public void draw ()
 {
   background( 0 );
-  if (isWon() == true)
-    displayWinningMessage();
+     if(isWon() == true){
+        displayWinningMessage();
+        noLoop();
+    }
+    else if(isLost() == true){
+      displayLosingMessage();
+      noLoop();
+    }
 }
 public boolean isWon()
 {
@@ -95,7 +101,7 @@ public void displayLosingMessage()
     buttons[10][12].setLabel("!");
     buttons[10][13].setLabel("!");
   }
-  noLoop();
+
 }
 public void displayTimer(){
   //no timer 
@@ -139,7 +145,7 @@ public void displayWinningMessage()
     buttons[10][12].setLabel("?");
     buttons[10][13].setLabel("!");
   }
-  noLoop();
+  
 }
 public boolean isValid(int r, int c)
 {
