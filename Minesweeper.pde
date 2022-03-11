@@ -43,7 +43,7 @@ public void draw ()
   background( 0 );
   if (isWon() == true){
     displayWinningMessage();
-    noLoop();
+    //noLoop(); completely broken on github
   }
 }
 public boolean isWon()
@@ -204,7 +204,7 @@ public class MSButton
       }
     } else if (mines.contains(this)) {
       displayLosingMessage();
-      noLoop();
+      //noLoop();
     } else if (countMines(myRow, myCol) > 0) {
       setLabel(countMines(myRow, myCol));
     } else {
@@ -215,11 +215,6 @@ public class MSButton
           }
         }
       }
-      /*
-       buttons[myRow][myCol+1].mousePressed();
-       buttons[myRow-1][myCol].mousePressed();
-       buttons[myRow+1][myCol].mousePressed();
-       */
     }
   }
   public void draw ()
@@ -236,6 +231,7 @@ public class MSButton
    stroke(217, 163, 130);
     rect(x, y, width, height,3);
     fill(0);
+   
     text(myLabel, x+width/2, y+height/2);
   }
   public void setLabel(String newLabel)
