@@ -41,14 +41,10 @@ public void setMines()
 public void draw ()
 {
   background( 0 );
-     if(isWon() == true){
-        displayWinningMessage();
-        noLoop();
-    }
-    else if(isLost() == true){
-      displayLosingMessage();
-      noLoop();
-    }
+  if (isWon() == true){
+    displayWinningMessage();
+    noLoop();
+  }
 }
 public boolean isWon()
 {
@@ -208,6 +204,7 @@ public class MSButton
       }
     } else if (mines.contains(this)) {
       displayLosingMessage();
+      noLoop();
     } else if (countMines(myRow, myCol) > 0) {
       setLabel(countMines(myRow, myCol));
     } else {
